@@ -52,5 +52,5 @@ material = SubResource("StandardMaterial3D_2w6ai")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.978148, 0.207912, 0, -0.207912, 0.978148, -0.47, 6.354, 9.506)
 
-[node name="Player" parent="." instance=ExtResource("1_1m07j")]
+[node name="RigidBody3D" parent="." instance=ExtResource("1_1m07j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3276, 1.01448, -0.0956593)
