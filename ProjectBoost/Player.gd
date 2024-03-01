@@ -6,6 +6,8 @@ extends RigidBody3D
 ## How much torque force to apply when moving
 @export var torque: float = 100.0
 
+var is_transitioning: bool = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("boost"):
@@ -19,6 +21,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node) -> void:
+	if is_transitioning:
+		return
+	
 	if "Goal" in body.get_groups():
 		complete_level(body.next_level_file)
 		
@@ -26,7 +31,17 @@ func _on_body_entered(body: Node) -> void:
 		crash_sequence()
 
 func crash_sequence() -> void:
-	get_tree().reload_current_scene()
+	is_transitioning = true
+	set_process(false)
+	var tween = create_tween()
+	tween.tween_interval(2.0)
+	tween.tween_callback(get_tree().reload_current_scene)
 	
 func complete_level(next_level_file: String) -> void:
-	get_tree().change_scene_to_file(next_level_file)
+	is_transitioning = true
+	set_process(false)
+	
+	var tween = create_tween()
+	tween.tween_interval(2.0)
+	tween.tween_callback(get_tree().change_scene_to_file.bind(next_level_file))
+	
