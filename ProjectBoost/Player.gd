@@ -9,6 +9,7 @@ extends RigidBody3D
 @onready var explosion_audio: AudioStreamPlayer = $ExplosionAudio
 @onready var success_audio: AudioStreamPlayer = $SuccessAudio
 @onready var rocket_audio: AudioStreamPlayer3D = $RocketAudio
+@onready var booster_particles: GPUParticles3D = $BoosterParticles
 
 var is_transitioning: bool = false
 
@@ -19,9 +20,11 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("boost"):
 		rocket_audio.play()
+		booster_particles.emitting = true
 		
 	if Input.is_action_just_released("boost"):
 		rocket_audio.stop()
+		booster_particles.emitting = false
 	
 	if Input.is_action_pressed("rotate_left"):
 		apply_torque(Vector3(0, 0, delta * torque));
@@ -42,6 +45,7 @@ func _on_body_entered(body: Node) -> void:
 
 func crash_sequence() -> void:
 	explosion_audio.play()
+	booster_particles.emitting = false
 	is_transitioning = true
 	set_process(false)
 	var tween = create_tween()
