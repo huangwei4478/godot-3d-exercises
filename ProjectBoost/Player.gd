@@ -6,12 +6,22 @@ extends RigidBody3D
 ## How much torque force to apply when moving
 @export var torque: float = 100.0
 
+@onready var explosion_audio: AudioStreamPlayer = $ExplosionAudio
+@onready var success_audio: AudioStreamPlayer = $SuccessAudio
+@onready var rocket_audio: AudioStreamPlayer3D = $RocketAudio
+
 var is_transitioning: bool = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("boost"):
 		apply_central_force(basis.y * delta * thrust)
+		
+	if Input.is_action_just_pressed("boost"):
+		rocket_audio.play()
+		
+	if Input.is_action_just_released("boost"):
+		rocket_audio.stop()
 	
 	if Input.is_action_pressed("rotate_left"):
 		apply_torque(Vector3(0, 0, delta * torque));
@@ -31,6 +41,7 @@ func _on_body_entered(body: Node) -> void:
 		crash_sequence()
 
 func crash_sequence() -> void:
+	explosion_audio.play()
 	is_transitioning = true
 	set_process(false)
 	var tween = create_tween()
@@ -38,6 +49,7 @@ func crash_sequence() -> void:
 	tween.tween_callback(get_tree().reload_current_scene)
 	
 func complete_level(next_level_file: String) -> void:
+	success_audio.play()
 	is_transitioning = true
 	set_process(false)
 	

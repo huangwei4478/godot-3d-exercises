@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ywn13gf0448u"]
 
 [ext_resource type="Script" path="res://Level/LandingPad.gd" id="1_nihan"]
-[ext_resource type="PackedScene" uid="uid://cq8oo0q0850fn" path="res://player.tscn" id="2_tshcl"]
+[ext_resource type="PackedScene" uid="uid://533uhnurwsaa" path="res://player.tscn" id="2_tshcl"]
 [ext_resource type="PackedScene" uid="uid://drlneaotpvlky" path="res://moving_hazard.tscn" id="3_5i83s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n6shg"]

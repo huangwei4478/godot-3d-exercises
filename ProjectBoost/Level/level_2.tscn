@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cclsu5vnau7un"]
 
 [ext_resource type="Script" path="res://Level/LandingPad.gd" id="1_xmlyo"]
-[ext_resource type="PackedScene" uid="uid://cq8oo0q0850fn" path="res://player.tscn" id="2_fqjfd"]
+[ext_resource type="PackedScene" uid="uid://533uhnurwsaa" path="res://player.tscn" id="2_fqjfd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n6shg"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
