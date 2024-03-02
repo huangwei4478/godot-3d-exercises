@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cclsu5vnau7un"]
+[gd_scene load_steps=10 format=3 uid="uid://ywn13gf0448u"]
 
-[ext_resource type="Script" path="res://Level/LandingPad.gd" id="1_xmlyo"]
-[ext_resource type="PackedScene" uid="uid://cq8oo0q0850fn" path="res://player.tscn" id="2_fqjfd"]
+[ext_resource type="Script" path="res://Level/LandingPad.gd" id="1_nihan"]
+[ext_resource type="PackedScene" uid="uid://cq8oo0q0850fn" path="res://player.tscn" id="2_tshcl"]
+[ext_resource type="PackedScene" uid="uid://drlneaotpvlky" path="res://moving_hazard.tscn" id="3_5i83s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n6shg"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,9 +26,6 @@ albedo_color = Color(0.196078, 1, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w6ai"]
 albedo_color = Color(0.690196, 0.32549, 0.0156863, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkhbd"]
-albedo_color = Color(0.0588235, 1, 1, 1)
-
 [node name="Level" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -41,8 +39,8 @@ shadow_enabled = true
 transform = Transform3D(1.60022, 0, 0, 0, 0.126025, 0, 0, 0, 1.1449, 9.78069, 0.0910892, -0.117032)
 use_collision = true
 material = SubResource("StandardMaterial3D_ldwp7")
-script = ExtResource("1_xmlyo")
-next_level_file = "res://Level/level_3.tscn"
+script = ExtResource("1_nihan")
+next_level_file = "res://Level/level.tscn"
 
 [node name="LaunchingPad" type="CSGBox3D" parent="."]
 transform = Transform3D(1.265, 0, 0, 0, 0.355, 0, 0, 0, 1.07, -12.3276, 0.175848, -0.0956593)
@@ -55,14 +53,11 @@ use_collision = true
 size = Vector3(30, 8, 5)
 material = SubResource("StandardMaterial3D_2w6ai")
 
-[node name="Obstacles" type="CSGBox3D" parent="." groups=["Failure"]]
-transform = Transform3D(0.227465, 0, 0, 0, 0.439574, 0, 0, 0, 1, 0.0171099, 5.48486, -0.0153503)
-use_collision = true
-size = Vector3(30, 8, 5)
-material = SubResource("StandardMaterial3D_wkhbd")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.978148, 0.207912, 0, -0.207912, 0.978148, -0.47, 6.354, 9.506)
 
-[node name="RigidBody3D" parent="." instance=ExtResource("2_fqjfd")]
+[node name="RigidBody3D" parent="." instance=ExtResource("2_tshcl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3276, 1.01448, -0.0956593)
+
+[node name="MovingHazard" parent="." groups=["Failure"] instance=ExtResource("3_5i83s")]
+destination = Vector3(0, 3, 0)
