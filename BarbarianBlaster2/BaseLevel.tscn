@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4rcpurbjfptm"]
+[gd_scene load_steps=5 format=3 uid="uid://b4rcpurbjfptm"]
+
+[ext_resource type="MeshLibrary" uid="uid://csdnsuqcmxivd" path="res://MeshLibraries/SpaceLibrary.tres" id="1_aomix"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_thefp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -14,6 +16,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4888, 5.92522, -8.398)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mvmns")
@@ -28,3 +31,9 @@ size = Vector3(100, 2, 100)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 14.5, 9.5)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_aomix")
+data = {
+"cells": PackedInt32Array(10, 12, 0, 10, 10, 1, 12, 10, 1, 8, 12, 1, 8, 10, 0)
+}
