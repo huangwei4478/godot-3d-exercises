@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4rcpurbjfptm"]
+[gd_scene load_steps=6 format=3 uid="uid://b4rcpurbjfptm"]
 
-[ext_resource type="MeshLibrary" uid="uid://csdnsuqcmxivd" path="res://MeshLibraries/SpaceLibrary.tres" id="1_aomix"]
+[ext_resource type="MeshLibrary" uid="uid://csdnsuqcmxivd" path="res://MeshLibraries/SpaceLibrary.tres" id="1_01io7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_thefp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,6 +15,9 @@ sky = SubResource("Sky_6qn8h")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4newx"]
+albedo_color = Color(0.266667, 0.266667, 0.266667, 1)
+
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4888, 5.92522, -8.398)
 
@@ -28,12 +31,16 @@ shadow_enabled = true
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(100, 2, 100)
+material = SubResource("StandardMaterial3D_4newx")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 14.5, 9.5)
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("1_aomix")
+mesh_library = ExtResource("1_01io7")
+cell_size = Vector3(4, 4, 4)
+cell_center_y = false
 data = {
-"cells": PackedInt32Array(10, 12, 0, 10, 10, 1, 12, 10, 1, 8, 12, 1, 8, 10, 0)
+"cells": PackedInt32Array(65535, 65534, 0, 65535, 2, 0, 65531, 65535, 0, 4, 65535, 0, 65531, 65534, 0, 65531, 0, 0, 65531, 2, 0, 65532, 65534, 0, 65532, 2, 0, 65533, 65534, 0, 65533, 2, 0, 65534, 2, 0, 0, 65534, 0, 0, 2, 0, 1, 65534, 0, 1, 2, 0, 2, 65534, 0, 2, 2, 0, 3, 65534, 0, 3, 2, 0, 4, 65534, 0, 4, 0, 0, 4, 1, 0, 4, 2, 0, 65532, 65535, 0, 65533, 65535, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0)
 }
+metadata/_editor_floor_ = Vector3(0, 0, 0)
