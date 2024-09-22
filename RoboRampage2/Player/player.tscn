@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2rnwo6pbgb5b"]
+[gd_scene load_steps=6 format=3 uid="uid://c2rnwo6pbgb5b"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_swt2c"]
 [ext_resource type="Script" path="res://Player/SmoothCamera.gd" id="2_hcfc2"]
+[ext_resource type="Script" path="res://Player/CrossHair.gd" id="3_uax10"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xs7lh"]
 
@@ -22,3 +23,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.427088, 0)
 [node name="SmoothCamera" type="Camera3D" parent="CameraPivot"]
 top_level = true
 script = ExtResource("2_hcfc2")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CrossHair" type="Control" parent="CenterContainer"]
+layout_mode = 2
+script = ExtResource("3_uax10")
