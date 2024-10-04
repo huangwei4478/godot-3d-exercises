@@ -1,7 +1,11 @@
+class_name Enemy
+
 extends CharacterBody3D
 
 @onready var navigation_agent_3d = $NavigationAgent3D
 @onready var animation_player = $AnimationPlayer
+
+@export var max_hitpoints := 100
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -13,8 +17,15 @@ var player = null
 
 var provoked := false
 var approach_range := 12.0
+var hitpoints: int = max_hitpoints:
+	set(value):
+		hitpoints = value
+		if hitpoints <= 0:
+			queue_free()
+		provoked = true
 
 @export var attack_range := 1.5
+@export var attack_damage := 20
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -60,4 +71,5 @@ func look_at_target(direction: Vector3):
 	look_at(global_position + adjusted_direction, Vector3.UP, true)
 	
 func attack():
-	print("Enemy attacks!")
+	print("Enemy attack!")
+	player.hitpoints -= attack_damage
