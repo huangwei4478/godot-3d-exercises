@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfey8xmidk17t"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_skkyx"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_hin3s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fijy"]
+
+[node name="World" type="Node3D"]
+
+[node name="QodotMap" type="Node3D" parent="."]
+script = ExtResource("1_skkyx")
+map_file = "C:/Users/huangwei/Documents/GitHub/godot-3d-exercises/trenchbroomexercise/maps/world.map"
+entity_fgd = ExtResource("2_hin3s")
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_4fijy")
