@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://fioq87ku00sc"
+path="res://.godot/imported/world.2.map-cce8d0a58fb92c0bf652494cd9431102.tres"
+
+[deps]
+
+source_file="res://maps/autosave/world.2.map"
+dest_files=["res://.godot/imported/world.2.map-cce8d0a58fb92c0bf652494cd9431102.tres"]
+
+[params]
+
