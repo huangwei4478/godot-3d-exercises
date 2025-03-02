@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=4 uid="uid://pgvmn5umjp5e"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_iocgt"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_lj5fv"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="3_th0rn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cq26i"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_344r6"]
+sky_material = SubResource("ProceduralSkyMaterial_cq26i")
+
+[sub_resource type="Environment" id="Environment_x4864"]
+background_mode = 2
+sky = SubResource("Sky_344r6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdodg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uahpv"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_au5pn"]
+_surfaces = [{
+"aabb": AABB(-4, -1, -4, 8, 2, 8),
+"attribute_data": PackedByteArray("AACAQgAAgMEAAIBCAACAQQAAgMIAAIBBAACAwgAAgMEAAIDCAACAwQAAgEIAAIDBAACAQgAAgEEAAIDCAACAQQAAgEIAAIDCAACAQgAAgEIAAIDCAACAQgAAgMIAAIDCAACAwgAAgMIAAIBCAACAwgAAgEIAAIBCAACAwgAAgEIAAIBCAACAwQAAgEIAAIBBAACAwgAAgEEAAIDCAACAwQAAgMIAAIDBAACAQgAAgMEAAIBCAACAQQAAgMIAAIBB"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_uahpv"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACAwAAAgD8AAIDAAACAwAAAgL8AAIDAAACAQAAAgL8AAIDAAACAQAAAgD8AAIDAAACAwAAAgD8AAIDAAACAwAAAgD8AAIBAAACAwAAAgL8AAIBAAACAwAAAgL8AAIDAAACAQAAAgL8AAIDAAACAwAAAgL8AAIDAAACAwAAAgL8AAIBAAACAQAAAgL8AAIBAAACAQAAAgD8AAIDAAACAQAAAgD8AAIBAAACAwAAAgD8AAIBAAACAwAAAgD8AAIDAAACAQAAAgD8AAIDAAACAQAAAgL8AAIDAAACAQAAAgL8AAIBAAACAQAAAgD8AAIBAAACAwAAAgD8AAIBAAACAQAAAgD8AAIBAAACAQAAAgL8AAIBAAACAwAAAgL8AAIBA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_8x0l4"]
+vertices = PackedVector3Array(-4, 1, -4, -4, -1, -4, 4, -1, -4, 4, 1, -4, -4, 1, -4, -4, 1, 4, -4, -1, 4, -4, -1, -4, 4, -1, -4, -4, -1, -4, -4, -1, 4, 4, -1, 4, 4, 1, -4, 4, 1, 4, -4, 1, 4, -4, 1, -4, 4, 1, -4, 4, -1, -4, 4, -1, 4, 4, 1, 4, -4, 1, 4, 4, 1, 4, 4, -1, 4, -4, -1, 4)
+indices = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14, 15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jxdho"]
+points = PackedVector3Array(-4, 1, -4, -4, -1, -4, 4, -1, -4, 4, 1, -4, -4, 1, 4, -4, -1, 4, 4, -1, 4, 4, 1, 4)
+
+[node name="World3" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x4864")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="QodotMap" type="Node3D" parent="."]
+script = ExtResource("1_iocgt")
+map_file = "C:/Users/harwo/Documents/GitHub/godot-3d-exercises/trencnbroomexercise2/Maps/Map3.map"
+entity_fgd = ExtResource("2_lj5fv")
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_sdodg")
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="QodotMap"]
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="QodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_au5pn")
+
+[node name="entity_0_occluder_instance" type="OccluderInstance3D" parent="QodotMap/entity_0_worldspawn"]
+occluder = SubResource("ArrayOccluder3D_8x0l4")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_jxdho")
+
+[node name="entity_1_demo_model" type="Node3D" parent="QodotMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.5, 0.5)
+script = ExtResource("3_th0rn")
+properties = {
+"classname": "demo_model",
+"origin": "8 -8 24"
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0144223, 0.548627, -0.835943, 0.301282, 0.794791, 0.526818, 0.953426, -0.259452, -0.153829, -27.1017, 19.1469, -1.13286)

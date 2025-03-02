@@ -1,9 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://cingcwyk3yxew"]
+[gd_scene load_steps=9 format=4 uid="uid://cingcwyk3yxew"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_lbop8"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_vki3k"]
+[ext_resource type="Texture2D" uid="uid://d05qy4ax1m81h" path="res://textures/Grass/Grass_20-256x256.png" id="3_5mx7g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkmuu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehtq5"]
+albedo_texture = ExtResource("3_5mx7g")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2vx65"]
+_surfaces = [{
+"aabb": AABB(-11, -1, -11, 23, 2, 20),
+"attribute_data": PackedByteArray("AABAPwAAgL0AAEA/AACAPQAAML8AAIA9AAAwvwAAgL0AADC/AACAvQAAED8AAIC9AAAQPwAAgD0AADC/AACAPQAAMD8AADC/AAAwPwAAQD8AABC/AABAPwAAEL8AADC/AAAwvwAAML8AABA/AAAwvwAAED8AAEA/AAAwvwAAQD8AADA/AACAvQAAMD8AAIA9AAAQvwAAgD0AABC/AACAvQAAQL8AAIC9AAAwPwAAgL0AADA/AACAPQAAQL8AAIA9"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_ehtq5"),
+"name": "Grass/Grass_20-256x256",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAwwQAAgD8AADDBAAAwwQAAgL8AADDBAABAQQAAgL8AADDBAABAQQAAgD8AADDBAAAwwQAAgD8AADDBAAAwwQAAgD8AABBBAAAwwQAAgL8AABBBAAAwwQAAgL8AADDBAABAQQAAgL8AADDBAAAwwQAAgL8AADDBAAAwwQAAgL8AABBBAABAQQAAgL8AABBBAABAQQAAgD8AADDBAABAQQAAgD8AABBBAAAwwQAAgD8AABBBAAAwwQAAgD8AADDBAABAQQAAgD8AADDBAABAQQAAgL8AADDBAABAQQAAgL8AABBBAABAQQAAgD8AABBBAAAwwQAAgD8AABBBAABAQQAAgD8AABBBAABAQQAAgL8AABBBAAAwwQAAgL8AABBB/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_hpu5v"]
+vertices = PackedVector3Array(-11, 1, -11, -11, -1, -11, 12, -1, -11, 12, 1, -11, -11, 1, -11, -11, 1, 9, -11, -1, 9, -11, -1, -11, 12, -1, -11, -11, -1, -11, -11, -1, 9, 12, -1, 9, 12, 1, -11, 12, 1, 9, -11, 1, 9, -11, 1, -11, 12, 1, -11, 12, -1, -11, 12, -1, 9, 12, 1, 9, -11, 1, 9, 12, 1, 9, 12, -1, 9, -11, -1, 9)
+indices = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14, 15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2yuxt"]
+points = PackedVector3Array(-11, 1, -11, -11, -1, -11, 12, -1, -11, 12, 1, -11, -11, 1, 9, -11, -1, 9, 12, -1, 9, 12, 1, 9)
 
 [node name="World" type="Node3D"]
 
@@ -13,3 +39,14 @@ map_file = "C:/Users/harwo/Documents/GitHub/godot-3d-exercises/trencnbroomexerci
 entity_fgd = ExtResource("2_vki3k")
 texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
 default_material = SubResource("StandardMaterial3D_xkmuu")
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="QodotMap"]
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="QodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_2vx65")
+
+[node name="entity_0_occluder_instance" type="OccluderInstance3D" parent="QodotMap/entity_0_worldspawn"]
+occluder = SubResource("ArrayOccluder3D_hpu5v")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_2yuxt")
