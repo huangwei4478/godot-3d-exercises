@@ -1,9 +1,91 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfey8xmidk17t"]
+[gd_scene load_steps=15 format=4 uid="uid://bfey8xmidk17t"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_skkyx"]
 [ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_hin3s"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="3_6g78c"]
+[ext_resource type="Texture2D" uid="uid://xb0eeaou05w1" path="res://textures/256x256/Grass/Grass_12-256x256.png" id="4_u5f53"]
+[ext_resource type="Texture2D" uid="uid://dfhuf650fbus" path="res://textures/256x256/Bricks/Bricks_02-256x256.png" id="5_euu80"]
+[ext_resource type="Texture2D" uid="uid://dglgctjv04v0" path="res://textures/256x256/Roofs/Roofs_24-256x256.png" id="6_knnta"]
+[ext_resource type="Texture2D" uid="uid://cyxmf77m87wg5" path="res://textures/256x256/Bricks/Bricks_23-256x256.png" id="7_0t678"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fijy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j88s2"]
+albedo_texture = ExtResource("4_u5f53")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtjsx"]
+albedo_texture = ExtResource("5_euu80")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljuos"]
+albedo_texture = ExtResource("6_knnta")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5urb2"]
+albedo_texture = ExtResource("7_0t678")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72u2o"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uxjhq"]
+_surfaces = [{
+"aabb": AABB(-2.7, -4.5, -2.55, 12, 1, 11),
+"attribute_data": PackedByteArray("AADAPgAAgL0AAMA+AAAAAAAAwL4AAAAAAADAvgAAgL0AAIC+AACAvQAA4D4AAIC9AADgPgAAAAAAAIC+AAAAAAAAgD4AAMC+AACAPgAAwD4AAOC+AADAPgAA4L4AAMC+AACAvgAAwL4AAOA+AADAvgAA4D4AAMA+AACAvgAAwD4AAIA+AACAvQAAgD4AAAAAAADgvgAAAAAAAOC+AACAvQAAwL4AAIC9AADAPgAAgL0AAMA+AAAAAAAAwL4AAAAA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_j88s2"),
+"name": "256x256/Grass/Grass_12-256x256",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("zcwswAAAYMAzMyPAzcwswAAAkMAzMyPAzcwUQQAAkMAzMyPAzcwUQQAAYMAzMyPAzcwswAAAYMAzMyPAzcwswAAAYMAzMwdBzcwswAAAkMAzMwdBzcwswAAAkMAzMyPAzcwUQQAAkMAzMyPAzcwswAAAkMAzMyPAzcwswAAAkMAzMwdBzcwUQQAAkMAzMwdBzcwUQQAAYMAzMyPAzcwUQQAAYMAzMwdBzcwswAAAYMAzMwdBzcwswAAAYMAzMyPAzcwUQQAAYMAzMyPAzcwUQQAAkMAzMyPAzcwUQQAAkMAzMwdBzcwUQQAAYMAzMwdBzcwswAAAYMAzMwdBzcwUQQAAYMAzMwdBzcwUQQAAkMAzMwdBzcwswAAAkMAzMwdB/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}, {
+"aabb": AABB(-0.7, -3.5, -0.55, 8, 4, 6),
+"attribute_data": PackedByteArray("AACAPgAAoL4AAIA+AACAvQAAgL4AAIC9AACAvgAAoL4AAIC+AACgvgAAAD4AAKC+AAAAPgAAgL0AAIC+AACAvQAAgD4AAIC+AACAPgAAgD4AAAC+AACAPgAAAL4AAIC+AACAvgAAgL4AAAA+AACAvgAAAD4AAIA+AACAvgAAgD4AAIA+AACgvgAAgD4AAIC9AAAAvgAAgL0AAAC+AACgvgAAgL4AAKC+AACAPgAAoL4AAIA+AACAvQAAgL4AAIC9"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_wtjsx"),
+"name": "256x256/Bricks/Bricks_02-256x256",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("NDMzvwAAAD/MzAy/NDMzvwAAYMDMzAy/mpnpQAAAYMDMzAy/mpnpQAAAAD/MzAy/NDMzvwAAAD/MzAy/NDMzvwAAAD9mZq5ANDMzvwAAYMBmZq5ANDMzvwAAYMDMzAy/mpnpQAAAYMDMzAy/NDMzvwAAYMDMzAy/NDMzvwAAYMBmZq5AmpnpQAAAYMBmZq5AmpnpQAAAAD/MzAy/mpnpQAAAAD9mZq5ANDMzvwAAAD9mZq5ANDMzvwAAAD/MzAy/mpnpQAAAAD/MzAy/mpnpQAAAYMDMzAy/mpnpQAAAYMBmZq5AmpnpQAAAAD9mZq5ANDMzvwAAAD9mZq5AmpnpQAAAAD9mZq5AmpnpQAAAYMBmZq5ANDMzvwAAYMBmZq5A/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}, {
+"aabb": AABB(-2.7, 0.5, -2.55, 12, 4, 10),
+"attribute_data": PackedByteArray("VVVVPwAAAAAAAKA///9HwAAAoL///0fAVVVVvwAAAAAAAIC9AAC0wEZVFT4AALTAqKp6PwAASMBUVY2/AABIwFRVjT8AAHDAVFWNPwAAcECoqnq//v9vQKiqer/+/2/AAACAvQAAIMBGVRU+/v8fwEZVFT7+/x9AAACAvQAAIEBGVRW+AAC0wAAAgD0AALTAVFWNPwAASMCoqnq/AABIwFNVVb8AALTAU1VVPwAAtMD+/58/AABIwP7/n78AAEjA"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_ljuos"),
+"name": "256x256/Roofs/Roofs_24-256x256",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("NDMzvwAAkEDNzBxAzcwswAAAAD8xMyPAzcwUQQAAAD8xMyPAmpnpQAAAkEDNzBxANDMzvwAAkEDNzBxAKDMzvwAAkEDIzFxAycwswAAAAD9kZu5AzcwswAAAAD8xMyPAzcwUQQAAAD8xMyPAzcwswAAAAD8xMyPAycwswAAAAD9kZu5AzMwUQQAAAD9kZu5AmpnpQAAAkEDNzBxAmJnpQAAAkEDIzFxAKDMzvwAAkEDIzFxANDMzvwAAkEDNzBxAmJnpQAAAkEDIzFxAmpnpQAAAkEDNzBxAzcwUQQAAAD8xMyPAzMwUQQAAAD9kZu5AKDMzvwAAkEDIzFxAmJnpQAAAkEDIzFxAzMwUQQAAAD9kZu5AycwswAAAAD9kZu5A4rj//wAA/z/iuP//AAD/P+K4//8AAP8/4rj//wAA/z+qKqqq/3//v6oqqqr/f/+/qiqqqv9//7+qKqqq/3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//79U1aqq/////1TVqqr/////VNWqqv////9U1aqq//////9//7////+//3//v////7//f/+/////v/9//7////+/")
+}, {
+"aabb": AABB(-4.7, 2.5, -19.55, 12, 3, 11),
+"attribute_data": PackedByteArray("AAAAPwAAIL8AAAA/AADgvgAAgL4AAOC+AACAvgAAIL8AALC/AAAgvwAAML8AACC/AAAwvwAA4L4AALC/AADgvgAAsD8AAIC+AACwPwAAAD8AADA/AAAAPwAAMD8AAIC+AACwvwAAgL4AADC/AACAvgAAML8AAAA/AACwvwAAAD8AALA/AAAgvwAAsD8AAOC+AAAwPwAA4L4AADA/AAAgvwAAAL8AACC/AACAPgAAIL8AAIA+AADgvgAAAL8AAOC+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_5urb2"),
+"name": "256x256/Bricks/Bricks_23-256x256",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("ZmaWwAAAsEBmZpzBZmaWwAAAIEBmZpzBmpnpQAAAIEBmZpzBmpnpQAAAsEBmZpzBZmaWwAAAsEBmZpzBZmaWwAAAsEDNzAjBZmaWwAAAIEDNzAjBZmaWwAAAIEBmZpzBmpnpQAAAIEBmZpzBZmaWwAAAIEBmZpzBZmaWwAAAIEDNzAjBmpnpQAAAIEDNzAjBmpnpQAAAsEBmZpzBmpnpQAAAsEDNzAjBZmaWwAAAsEDNzAjBZmaWwAAAsEBmZpzBmpnpQAAAsEBmZpzBmpnpQAAAIEBmZpzBmpnpQAAAIEDNzAjBmpnpQAAAsEDNzAjBZmaWwAAAsEDNzAjBmpnpQAAAsEDNzAjBmpnpQAAAIEDNzAjBZmaWwAAAIEDNzAjB/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}, {
+"aabb": AABB(-11.7, -1.5, 4.45, 1, 1, 3),
+"attribute_data": PackedByteArray("AABwQwAAgMIAAHBDAABAwgAAYEMAAEDCAABgQwAAgMIAAABCAACAwgAAoEIAAIDCAACgQgAAQMIAAABCAABAwgAAAMIAAGBDAAAAwgAAcEMAAKDCAABwQwAAoMIAAGBDAAAAQgAAYEMAAKBCAABgQwAAoEIAAHBDAAAAQgAAcEMAAADCAACAwgAAAMIAAEDCAACgwgAAQMIAAKDCAACAwgAAcMMAAIDCAABgwwAAgMIAAGDDAABAwgAAcMMAAEDC"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_72u2o"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("MzM7wQAAAL9mZo5AMzM7wQAAwL9mZo5AMzMrwQAAwL9mZo5AMzMrwQAAAL9mZo5AMzM7wQAAAL9mZo5AMzM7wQAAAL9mZu5AMzM7wQAAwL9mZu5AMzM7wQAAwL9mZo5AMzMrwQAAwL9mZo5AMzM7wQAAwL9mZo5AMzM7wQAAwL9mZu5AMzMrwQAAwL9mZu5AMzMrwQAAAL9mZo5AMzMrwQAAAL9mZu5AMzM7wQAAAL9mZu5AMzM7wQAAAL9mZo5AMzMrwQAAAL9mZo5AMzMrwQAAwL9mZo5AMzMrwQAAwL9mZu5AMzMrwQAAAL9mZu5AMzM7wQAAAL9mZu5AMzMrwQAAAL9mZu5AMzMrwQAAwL9mZu5AMzM7wQAAwL9mZu5A/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
 
 [node name="World" type="Node3D"]
 
@@ -13,3 +95,16 @@ map_file = "C:/Users/huangwei/Documents/GitHub/godot-3d-exercises/trenchbroomexe
 entity_fgd = ExtResource("2_hin3s")
 texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
 default_material = SubResource("StandardMaterial3D_4fijy")
+
+[node name="entity_0_worldspawn" type="Node3D" parent="QodotMap"]
+script = ExtResource("3_6g78c")
+properties = {
+"_tb_textures": "textures;textures\\256x256;textures\\256x256\\Bricks;textures\\256x256\\Grass;textures\\256x256\\Roofs;textures\\256x256\\Tile;textures\\256x256\\Wood",
+"classname": "worldspawn",
+"mapversion": "220"
+}
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="QodotMap/entity_0_worldspawn"]
+cast_shadow = 2
+gi_mode = 0
+mesh = SubResource("ArrayMesh_uxjhq")

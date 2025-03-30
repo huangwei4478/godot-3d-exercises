@@ -6,13 +6,13 @@
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/trenchbroom_game_config.gd" id="3_8vw40"]
 [ext_resource type="Resource" uid="uid://dpjjh0hst6xj" path="res://addons/qodot/game_definitions/face_tags/clip_tag.tres" id="3_hren3"]
 [ext_resource type="Resource" uid="uid://b3ec6041xnoec" path="res://addons/qodot/game_definitions/face_tags/skip_tag.tres" id="4_y3jqb"]
-[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="5_lbrmn"]
+[ext_resource type="Resource" uid="uid://buniw1ww7rt0h" path="res://definitions/MyGame.tres" id="5_wy605"]
 
 [resource]
 script = ExtResource("3_8vw40")
 export_file = false
 trenchbroom_games_folder = "C:/Program Files (x86)/TrenchBroom-Win64-v2024.1-Release/games"
-game_name = "Qodot"
+game_name = "TrenchbroomExercise"
 icon = ExtResource("2_jej4n")
 map_formats = Array[Dictionary]([{
 "format": "Valve",
@@ -27,7 +27,7 @@ map_formats = Array[Dictionary]([{
 "format": "Quake3"
 }])
 texture_exclusion_patterns = Array[String](["*_ao", "*_emission", "*_heightmap", "*_metallic", "*_normal", "*_orm", "*_roughness", "*_sss", "*_albedo"])
-fgd_files = Array[Resource]([ExtResource("5_lbrmn")])
+fgd_files = Array[Resource]([ExtResource("5_wy605")])
 entity_scale = "1"
 default_uv_scale = Vector2(1, 1)
 brush_tags = Array[Resource]([ExtResource("1_bjrlk"), ExtResource("2_kk04y")])
