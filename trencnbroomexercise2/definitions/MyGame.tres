@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=7 format=3 uid="uid://bf1icc1ohc0hw"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="1_dfct3"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="1_o38yu"]
+[ext_resource type="Resource" uid="uid://ccwosedfa8v8d" path="res://addons/qodot/game_definitions/fgd/point_classes/light_point_class.tres" id="2_mtw47"]
+[ext_resource type="Resource" uid="uid://1feqnpy3upl3" path="res://addons/qodot/game_definitions/fgd/point_classes/demo_model_point_class.tres" id="3_7q8p3"]
+[ext_resource type="Resource" uid="uid://cubvqwi3p77sq" path="res://addons/qodot/game_definitions/fgd/point_classes/physics_ball_point_class.tres" id="3_c4305"]
+[ext_resource type="Resource" uid="uid://b2oe2svb1jwbd" path="res://definitions/OmniPointClass.tres" id="5_wkpjb"]
+
+[resource]
+script = ExtResource("1_dfct3")
+export_file = false
+target_folder = ""
+fgd_name = "MyGame"
+base_fgd_files = Array[Resource]([ExtResource("1_o38yu")])
+entity_definitions = Array[Resource]([ExtResource("2_mtw47"), ExtResource("3_7q8p3"), ExtResource("3_c4305"), ExtResource("5_wkpjb")])

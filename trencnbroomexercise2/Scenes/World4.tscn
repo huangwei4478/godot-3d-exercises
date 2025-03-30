@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=4 uid="uid://bw2d77ic5n6ry"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_gocy8"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_ym3so"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="3_auxs1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6f3vm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k3hy"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ryjam"]
+_surfaces = [{
+"aabb": AABB(-4, -1, -4, 8, 2, 8),
+"attribute_data": PackedByteArray("AACAQgAAgMEAAIBCAACAQQAAgMIAAIBBAACAwgAAgMEAAIDCAACAwQAAgEIAAIDBAACAQgAAgEEAAIDCAACAQQAAgEIAAIDCAACAQgAAgEIAAIDCAACAQgAAgMIAAIDCAACAwgAAgMIAAIBCAACAwgAAgEIAAIBCAACAwgAAgEIAAIBCAACAwQAAgEIAAIBBAACAwgAAgEEAAIDCAACAwQAAgMIAAIDBAACAQgAAgMEAAIBCAACAQQAAgMIAAIBB"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_8k3hy"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACAwAAAgD8AAIDAAACAwAAAgL8AAIDAAACAQAAAgL8AAIDAAACAQAAAgD8AAIDAAACAwAAAgD8AAIDAAACAwAAAgD8AAIBAAACAwAAAgL8AAIBAAACAwAAAgL8AAIDAAACAQAAAgL8AAIDAAACAwAAAgL8AAIDAAACAwAAAgL8AAIBAAACAQAAAgL8AAIBAAACAQAAAgD8AAIDAAACAQAAAgD8AAIBAAACAwAAAgD8AAIBAAACAwAAAgD8AAIDAAACAQAAAgD8AAIDAAACAQAAAgL8AAIDAAACAQAAAgL8AAIBAAACAQAAAgD8AAIBAAACAwAAAgD8AAIBAAACAQAAAgD8AAIBAAACAQAAAgL8AAIBAAACAwAAAgL8AAIBA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_7c5l0"]
+vertices = PackedVector3Array(-4, 1, -4, -4, -1, -4, 4, -1, -4, 4, 1, -4, -4, 1, -4, -4, 1, 4, -4, -1, 4, -4, -1, -4, 4, -1, -4, -4, -1, -4, -4, -1, 4, 4, -1, 4, 4, 1, -4, 4, 1, 4, -4, 1, 4, -4, 1, -4, 4, 1, -4, 4, -1, -4, 4, -1, 4, 4, 1, 4, -4, 1, 4, 4, 1, 4, 4, -1, 4, -4, -1, 4)
+indices = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14, 15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ud6ia"]
+points = PackedVector3Array(-4, 1, -4, -4, -1, -4, 4, -1, -4, 4, 1, -4, -4, 1, 4, -4, -1, 4, 4, -1, 4, 4, 1, 4)
+
+[node name="World4" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.42632, 0.261249, 0, 0.522498, 0.85264, -0.5, 0.738408, -0.452497, 0, 0, 0)
+light_energy = 0.7
+shadow_enabled = true
+
+[node name="QodotMap" type="Node3D" parent="."]
+script = ExtResource("1_gocy8")
+map_file = "C:/Users/harwo/Documents/GitHub/godot-3d-exercises/trencnbroomexercise2/Maps/Map4.map"
+entity_fgd = ExtResource("2_ym3so")
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_6f3vm")
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="QodotMap"]
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="QodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_ryjam")
+
+[node name="entity_0_occluder_instance" type="OccluderInstance3D" parent="QodotMap/entity_0_worldspawn"]
+occluder = SubResource("ArrayOccluder3D_7c5l0")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_ud6ia")
+
+[node name="entity_1_omni" type="Node3D" parent="QodotMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.5, -0.5)
+script = ExtResource("3_auxs1")
+properties = {
+"classname": "omni",
+"light_color": "255 0 111",
+"origin": "-8 -8 24"
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.00809416, -0.305163, 0.952266, 0.00259377, 0.9523, 0.305152, -0.999964, 0, 0.0084996, 9.11448, 6.12091, -0.029808)

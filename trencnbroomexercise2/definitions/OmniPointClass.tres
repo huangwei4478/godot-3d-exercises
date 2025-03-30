@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://b2oe2svb1jwbd"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_4echb"]
+
+[sub_resource type="GDScript" id="GDScript_7lyym"]
+script/source = "extends OmniLight3D
+
+@export var properties: Dictionary
+
+"
+
+[resource]
+script = ExtResource("1_4echb")
+script_class = SubResource("GDScript_7lyym")
+apply_rotation_on_map_build = true
+classname = "omni"
+description = "omni directional light"
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {
+"energy": "1",
+"light_color": "255 0 255"
+}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_class = "OmniLight3D"
+transient_node = false
