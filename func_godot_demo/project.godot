@@ -15,6 +15,10 @@ run/main_scene="uid://bs72ogkvdd7d6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GAME="*res://game_manager.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")

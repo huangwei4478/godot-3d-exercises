@@ -60,5 +60,5 @@
 // entity 2
 {
 "classname" "barrel01"
-"origin" "4 3 16"
+"origin" "64 0 16"
 }
