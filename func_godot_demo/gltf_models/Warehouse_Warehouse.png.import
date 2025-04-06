@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ttws25fdd3nq"
+path.s3tc="res://.godot/imported/Warehouse_Warehouse.png-9c6088cdf25e1ef551211e5506f4f59d.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "cff196d1d6c2b2c4ec6b24192aaca02e"
+}
+
+[deps]
+
+source_file="res://gltf_models/Warehouse_Warehouse.png"
+dest_files=["res://.godot/imported/Warehouse_Warehouse.png-9c6088cdf25e1ef551211e5506f4f59d.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

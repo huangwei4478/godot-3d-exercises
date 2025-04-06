@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b68e8megptspc"
+path.s3tc="res://.godot/imported/Industrial_Air_Conditioner_Horizontal_1_Industrial Air Conditioner_Horizontal_1.png-1fbb341182ddac86b4ce1e5660365449.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "1dd82e7e6a4444884a529a9d5b4d1924"
+}
+
+[deps]
+
+source_file="res://gltf_models/Air Conditioner/Industrial_Air_Conditioner_Horizontal_1_Industrial Air Conditioner_Horizontal_1.png"
+dest_files=["res://.godot/imported/Industrial_Air_Conditioner_Horizontal_1_Industrial Air Conditioner_Horizontal_1.png-1fbb341182ddac86b4ce1e5660365449.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

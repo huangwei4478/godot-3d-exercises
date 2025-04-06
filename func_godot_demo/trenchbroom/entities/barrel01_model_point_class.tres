@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" load_steps=3 format=3 uid="uid://clb4n8ou7ymux"]
+
+[ext_resource type="Script" uid="uid://bhdbdronf20ew" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="1_2tjcs"]
+[ext_resource type="PackedScene" uid="uid://bve2p8oaw0k4n" path="res://scenes/barrel01.tscn" id="1_ivgs3"]
+
+[resource]
+script = ExtResource("1_2tjcs")
+target_map_editor = 1
+models_sub_folder = ""
+scale_expression = "20"
+generate_size_property = true
+generate_gd_ignore_file = false
+scene_file = ExtResource("1_ivgs3")
+apply_rotation_on_map_build = true
+apply_scale_on_map_build = true
+classname = "barrel01"
+description = "blue barrel"
+func_godot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+auto_apply_to_matching_node_properties = false
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"barrel01.glb\", \"scale\": 10 }",
+"size": AABB(-1, -1, 0, 1, 1, 3)
+}
+node_class = ""
+name_property = ""
+metadata/_custom_type_script = "uid://bhdbdronf20ew"
