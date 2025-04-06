@@ -52,13 +52,3 @@
 ( 320 -368 256 ) ( 320 -368 257 ) ( 320 -367 256 ) Bricks_low/Bricks_22-256x256 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1
-{
-"classname" "actor_human"
-"origin" "-64 -48 16"
-}
-// entity 2
-{
-"classname" "player"
-"origin" "-40 -200 24"
-}

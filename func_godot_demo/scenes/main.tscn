@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=4 uid="uid://dndbqevy4axxv"]
 
 [ext_resource type="Script" uid="uid://cdn6cm2ldna6d" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_sugp2"]
-[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_jyhfs"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://trenchbroom/fgd/func_godot_default_map_settings.tres" id="2_jyhfs"]
 [ext_resource type="Material" uid="uid://8m2114mbc7lf" path="res://trenchbroom/textures/Bricks_low/Bricks_23-256x256.tres" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="4_jyhfs"]
 [ext_resource type="Material" uid="uid://depi3vvel423g" path="res://trenchbroom/textures/Bricks_low/Bricks_22-256x256.tres" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://bve2p8oaw0k4n" path="res://scenes/barrel01.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://c02ebmcbfv7i1" path="res://scenes/human.tscn" id="5_o6xl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sugp2"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -105,8 +105,8 @@ shape = SubResource("ConvexPolygonShape3D_ya4ey")
 [node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
 shape = SubResource("ConvexPolygonShape3D_eb6dy")
 
-[node name="entity_1_player" parent="FuncGodotMap" instance=ExtResource("4_jyhfs")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.25, 0.75, -2.25)
+[node name="entity_1_actor_human" parent="FuncGodotMap" instance=ExtResource("5_o6xl0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0.5, -2)
 
-[node name="entity_2_barrel01" parent="FuncGodotMap" instance=ExtResource("6_tefeu")]
-transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 0.09375, 0.5, 0.125)
+[node name="entity_2_player" parent="FuncGodotMap" instance=ExtResource("4_jyhfs")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.25, 0.75, -1.25)

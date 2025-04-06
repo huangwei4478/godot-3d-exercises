@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqyrw1s2xcxs2"
-path.s3tc="res://.godot/imported/Grass_05-256x256.png-a56d225db29b61b00b7f25cbf785103a.s3tc.ctex"
+uid="uid://wo3of7gdenfq"
+path.s3tc="res://.godot/imported/actor_marsfrog_0.png-9d5a1c03d8b6bf5d3279e0a991124bbc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "fb9d3467284279dd644af8e39c3aaefd"
+}
 
 [deps]
 
-source_file="res://trenchbroom/textures/Grass_low/Grass_05-256x256.png"
-dest_files=["res://.godot/imported/Grass_05-256x256.png-a56d225db29b61b00b7f25cbf785103a.s3tc.ctex"]
+source_file="res://trenchbroom/actor_marsfrog_0.png"
+dest_files=["res://.godot/imported/actor_marsfrog_0.png-9d5a1c03d8b6bf5d3279e0a991124bbc.s3tc.ctex"]
 
 [params]
 

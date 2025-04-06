@@ -23,6 +23,10 @@ GAME="*res://game_manager.gd"
 
 enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")
 
+[func_godot]
+
+default_map_settings="res://trenchbroom/fgd/func_godot_default_map_settings.tres"
+
 [input]
 
 move_left={

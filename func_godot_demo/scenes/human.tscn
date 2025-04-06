@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c02ebmcbfv7i1"]
+
+[ext_resource type="ArrayMesh" uid="uid://csmf01ti388vt" path="res://obj_models/human_low_poly.obj" id="1_swaxu"]
+
+[node name="Human" type="Node3D"]
+
+[node name="HumanLowPoly" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50409, 0)
+mesh = ExtResource("1_swaxu")
