@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci4jvdltdq00k"]
+
+[ext_resource type="PackedScene" uid="uid://pxyb584ttm8f" path="res://environment/assets/rock_pillar.glb" id="1_qm0kg"]
+
+[node name="rock_pillar" instance=ExtResource("1_qm0kg")]

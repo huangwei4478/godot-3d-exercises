@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2mvo5o3khbof"]
+
+[ext_resource type="PackedScene" uid="uid://dtvxlqer8fnec" path="res://environment/RockBoulder.tscn" id="1_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://6mctdo3q8hx2" path="res://environment/RockCliff.tscn" id="2_036b0"]
+[ext_resource type="PackedScene" uid="uid://ci4jvdltdq00k" path="res://environment/RockPillar.tscn" id="3_dwbse"]
+[ext_resource type="PackedScene" uid="uid://cmocy7r8qierl" path="res://environment/sand.tscn" id="4_pkg7o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aqk2v"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_036b0"]
+sky_material = SubResource("ProceduralSkyMaterial_aqk2v")
+
+[sub_resource type="Environment" id="Environment_dwbse"]
+background_mode = 2
+sky = SubResource("Sky_036b0")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_aqk2v"]
+resource_name = "new_animation"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.47, 9.07),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(14.308998, 17.598976, 0.80319023), Vector3(-29.581852, 17.598976, 0.80319023), Vector3(-32.691, 17.598976, 0.80319023)]
+}
+
+[sub_resource type="Animation" id="Animation_036b0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(14.308998, 17.598976, 0.80319023)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_036b0"]
+_data = {
+&"RESET": SubResource("Animation_036b0"),
+&"fly": SubResource("Animation_aqk2v")
+}
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dwbse")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="rock_boulder" parent="Environment" instance=ExtResource("1_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.437801, 3, -34.484295)
+
+[node name="rock_cliff" parent="Environment" instance=ExtResource("2_036b0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 11.593931)
+
+[node name="rock_pillar" parent="Environment" instance=ExtResource("3_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.57573, 0, 0)
+
+[node name="sand" parent="Environment" instance=ExtResource("4_pkg7o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="sand3" parent="Environment" instance=ExtResource("4_pkg7o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -40)
+
+[node name="sand4" parent="Environment" instance=ExtResource("4_pkg7o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40, 0, -40)
+
+[node name="sand2" parent="Environment" instance=ExtResource("4_pkg7o")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40, 0, 0)
+
+[node name="rock_boulder2" parent="Environment" instance=ExtResource("1_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4378014, 3, -39.484295)
+
+[node name="rock_pillar2" parent="Environment" instance=ExtResource("3_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.848541, 0, -33)
+
+[node name="rock_pillar3" parent="Environment" instance=ExtResource("3_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.15146, 0, -46)
+
+[node name="rock_pillar4" parent="Environment" instance=ExtResource("3_dwbse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8485413, 0, -10)
+
+[node name="rock_boulder3" parent="Environment" instance=ExtResource("1_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.437801, 3, 1.5157051)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.308998, 17.598976, 0.80319023)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_036b0")
+}
+autoplay = "fly"
